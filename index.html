@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#fff8fb" />
+  <title>18 é Par — Jogos</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="loginView" class="view">
+      <div class="hero">
+        <div class="eyebrow">18 é par ✦</div>
+        <h1>Quem entrou no grupo?</h1>
+        <p>Escolha seu nome para jogar. No <strong>Quem é mais provável?</strong>, se você mudar uma resposta depois, o voto antigo é substituído.</p>
+      </div>
+      <div id="nameGrid" class="name-grid" aria-label="Escolha seu nome"></div>
+    </section>
+
+    <section id="homeView" class="view hidden">
+      <header class="topbar">
+        <div>
+          <div class="eyebrow">18 é par ✦</div>
+          <h1>Oi, <span id="currentPlayerLabel"></span> 💌</h1>
+        </div>
+        <button id="switchPlayerBtn" class="ghost-btn" type="button">Trocar nome</button>
+      </header>
+
+      <div class="intro-card">
+        <p>Três jogos, muita história interna e uma quantidade saudável de caos coletivo.</p>
+      </div>
+
+      <div class="game-grid">
+        <button class="game-card" data-game="personality" type="button">
+          <span class="game-icon">✨</span>
+          <span>
+            <strong>Quem você é do grupo?</strong>
+            <small>Um quiz de personalidade inspirado no jeito de cada uma.</small>
+          </span>
+        </button>
+
+        <button class="game-card" data-game="likely" type="button">
+          <span class="game-icon">👀</span>
+          <span>
+            <strong>Quem é mais provável?</strong>
+            <small>Vote, mude de ideia e veja o placar geral da turma.</small>
+          </span>
+        </button>
+
+        <button class="game-card" data-game="knowledge" type="button">
+          <span class="game-icon">🧠</span>
+          <span>
+            <strong>Você realmente conhece suas amigas?</strong>
+            <small>Teste sua memória da lore do 18 é par.</small>
+          </span>
+        </button>
+      </div>
+
+      <div id="syncStatus" class="status-box"></div>
+    </section>
+
+    <section id="gameView" class="view hidden">
+      <header class="topbar compact">
+        <button id="backBtn" class="ghost-btn" type="button">← Jogos</button>
+        <div class="player-pill">jogando como <strong id="gamePlayerLabel"></strong></div>
+      </header>
+      <div id="gameMount"></div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
